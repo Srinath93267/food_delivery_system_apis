@@ -1,0 +1,625 @@
+{
+	"info": {
+		"_postman_id": "50b60e4f-7385-4f6b-acab-5e6981872520",
+		"name": "Food Delivery System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37887404"
+	},
+	"item": [
+		{
+			"name": "Restaurant Owner Functionalities",
+			"item": [
+				{
+					"name": "Restaurant Menu",
+					"item": [
+						{
+							"name": "Get Menu By Restaurant ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/get-menu/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get-menu",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Restaurant's Menu",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/get-menu",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get-menu"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Food Item By Restaurant ID",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"restaurantid\": 3,\r\n    \"foodname\": \"OREO ICE CREAM(500 ML)\",\r\n    \"price\": 160.00,\r\n    \"type\": \"ICE CREAM\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/add-food-item",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"add-food-item"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Food ID by Food ID & Restaurant ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"restaurantid\":3,\r\n    \"foodid\":934\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/delete-food-item",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"delete-food-item"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Food Item by Food ID & Restaurant ID",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"restaurantid\": 3,\r\n    \"foodid\": 934,\r\n    \"foodname\": null,\r\n    \"price\": null,\r\n    \"type\": null,\r\n    \"availability\": \"UNAVAILABLE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/update-food-item",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"update-food-item"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Restaurant Order",
+					"item": [
+						{
+							"name": "Get Orders by Restaurant ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/get-orders-by-restaurant-id/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get-orders-by-restaurant-id",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Order Details by Order ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/get-orders-by-order-id/4",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get-orders-by-order-id",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Order by Order ID",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderid\": 1,\r\n    \"totalamount\": null,\r\n    \"deliveryaddress\": null,\r\n    \"deliveryfee\": 63.00,\r\n    \"paymentmethod\": null,\r\n    \"orderstatus\": \"Order Cancelled\",\r\n    \"notes\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/update-orders-by-order-id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"update-orders-by-order-id"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Order Details by Restaurant ID and Zone ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"zoneid\":102\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/get-orders-by-restaurant-and-zone-id/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get-orders-by-restaurant-and-zone-id",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Restaurant Profile",
+					"item": [
+						{
+							"name": "Get Restaurant Profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/get-restaurant-profile-by-restaurant-id/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get-restaurant-profile-by-restaurant-id",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Restaurant Profile by Restaurant ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/delete-restaurant-profile-by-restaurant-id/4",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"delete-restaurant-profile-by-restaurant-id",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Restaurant Profile",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"restaurantname\": null,\r\n    \"mainphone\": 7891324565\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/update-restaurant-profile-by-restaurant-id/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"update-restaurant-profile-by-restaurant-id",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Restaurant Profile",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"restaurantname\":\"Taste Junction\",\r\n    \"mainphone\":938271456\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/create-restaurant-profile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"create-restaurant-profile"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Restaurant Zone",
+					"item": [
+						{
+							"name": "Get Restaurant Zone Detail by Zone ID & Restaurant ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"zoneid\":104\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/get-a-zone-detail/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get-a-zone-detail",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Restaurant Zone Detail by Restaurant ID",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"zonename\": \"GHATKOPAR\",\r\n    \"zonecity\": \"MUMBAI\",\r\n    \"phone\": 7182934560\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/add-a-zone-detail/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"add-a-zone-detail",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Zone Detail by Zone ID & Restaurant ID",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"zoneid\": 105,\r\n    \"zonename\": null,\r\n    \"zonecity\": \"BANGALORE\",\r\n    \"zoneaddress\": null,\r\n    \"openingtime\": \"00:00:00\",\r\n    \"closingtime\": \"00:00:00\",\r\n    \"phone\": 1829345670,\r\n    \"status\": \"OPENED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/update-a-zone-detail/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"update-a-zone-detail",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a Zone Detail by Zone ID and Restaurant ID",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"zoneid\":105\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/delete-a-zone-detail/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"delete-a-zone-detail",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Restaurant Manager",
+					"item": [
+						{
+							"name": "Create a Restaurant Manager Detail",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"restaurantid\":2,\r\n    \"username\":\"Ajay456\",\r\n    \"password\":\"User2Spice\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/create-restaurant-manager-detail",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"create-restaurant-manager-detail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a Restaurant Manager Detail",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userid\":10,\r\n    \"restaurantid\":2,\r\n    \"username\":\"Ajay456\",\r\n    \"password\":\"User2Spice\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/delete-restaurant-manager-detail",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"delete-restaurant-manager-detail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a Restaurant Manager Detail",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userid\":1,\r\n    \"restaurantid\":1,\r\n    \"password\":\"User1Hungry\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/update-restaurant-manager-detail",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"update-restaurant-manager-detail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login a Restaurant Manager",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"restaurantname\": \"The Hungry Fork\",\r\n    \"username\": \"Bharath159\",\r\n    \"password\": \"User1Hugry\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login-restaurant-manager",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login-restaurant-manager"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJoYXJhdGgxNTkiLCJpYXQiOjE3MzA3NzQ4NzB9.PErlYwxmPl1rcFP4Mm0ZqwSzXXrZylKcxXZD4NJMcQo",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000/restaurant",
+			"type": "string"
+		}
+	]
+}
