@@ -1,0 +1,10 @@
+{
+    "user": "****",
+    "password": "****",
+    "database": "*****",
+    "server": "******",
+    "port": 1234,
+    "options": {
+        "encrypt": true
+    }
+}
