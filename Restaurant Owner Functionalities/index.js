@@ -43,6 +43,8 @@ const verifyToken = async (req, res, next) => {
     }
 };
 
+//#region Restaurant Owner Functionalities
+
 // LOGIN RESTAURANT MANAGER
 
 app.get(API_PREFIX + 'login-restaurant-manager', async (req, res) => {
@@ -353,6 +355,8 @@ app.patch(API_PREFIX + 'update-restaurant-manager-detail', verifyToken, async (r
         res.status(500).send('Server error');
     }
 });
+
+//#endregion
 
 // Port Number
 const PORT = process.env.PORT || 5000;
