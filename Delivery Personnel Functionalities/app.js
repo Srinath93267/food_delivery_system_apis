@@ -10,21 +10,22 @@ const app = express();
 app.use(express.json());
 
 // SQL Server configuration
-const sqlConfig = {
-    user: '', 
-    password: '', 
-    server: 'SMILE😃', // Your SQL Server address
-    database: 'FOOD_DELIVERY', // Your database name
-    options: {
-        encrypt: true, // Encryption option for Azure or secure connections
-        trustServerCertificate: true, // Use for self-signed certificates
-        trustedConnection: true, // Use Windows Authentication
-    }
-};
-const API_PREFIX = '/restaurant/';
+//const sqlConfig = {
+ //   user: 'sowmya', 
+ //   password: 'sowmya23', 
+  //  server: 'SMILE😃', // Your SQL Server address
+  //  database: 'FOOD_DELIVERY', // Your database name
+   // options: {
+   //     encrypt: true, // Encryption option for Azure or secure connections
+   //     trustServerCertificate: true, // Use for self-signed certificates
+   //     trustedConnection: true, // Use Windows Authentication
+   // }
+//};
+const sqlConfig = require("./fooddeliveryazure.json");
+const API_PREFIX = '/api/delivery/';
 const jwtSecret = 'your_jwt_secret';
 
-//const sqlConfig = require("./fooddeliveryazure.json");
+
 //const API_PREFIX = '/restaurant/';
 //const jwtSecret = 'your_jwt_secret';
 
@@ -45,7 +46,25 @@ sql.connect(sqlConfig, (err) => {
     }
 });
 
-//const API_PREFIX = '/api/delivery/';
+// Protected route (middleware to verify authorization token)
+const verifyToken = async (req, res, next) => {
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+        return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    const token = authHeader.split(' ')[1];
+
+    try {
+        const decoded = jwt.verify(token, jwtSecret);
+        req.userId = decoded.userId; // Attach user ID to the request object
+        next();
+    } catch (error) {
+        console.error(error);
+        return res.status(401).json({ message: 'Unauthorized' });
+    }
+};
 
 // MANAGE DELIVERY PERSONNEL
 
@@ -54,7 +73,7 @@ app.post(API_PREFIX + 'create', async (req, res) => {
     try {
         const { Username, PasswordHash, Name, ContactDetails, VehicleType, IsAvailable } = req.body;
         const result = await sql.query`
-            EXEC CreateDeliveryPersonnel
+            EXEC CREATE_DELIVERY_PERSONNEL
             @Username = ${Username},
             @PasswordHash = ${PasswordHash},
             @Name = ${Name},
@@ -73,7 +92,7 @@ app.put(API_PREFIX + 'update', async (req, res) => {
     try {
         const { DeliveryPersonnelID, Name, ContactDetails, VehicleType, IsAvailable } = req.body;
         const result = await sql.query`
-            EXEC UpdateDeliveryPersonnel
+            EXEC UPDATE_DELIVERY_PERSONNEL
             @DeliveryPersonnelID = ${DeliveryPersonnelID},
             @Name = ${Name},
             @ContactDetails = ${ContactDetails},
@@ -91,7 +110,7 @@ app.delete(API_PREFIX + 'delete', async (req, res) => {
     try {
         const { DeliveryPersonnelID } = req.body;
         const result = await sql.query`
-            EXEC DeleteDeliveryPersonnel
+            EXEC DELETE_DELIVERY_PERSONNEL
             @DeliveryPersonnelID = ${DeliveryPersonnelID};`;
         res.status(200).json({ message: 'Delivery personnel deleted successfully' });
     } catch (err) {
@@ -100,12 +119,12 @@ app.delete(API_PREFIX + 'delete', async (req, res) => {
     }
 });
 
-//-get delivery personnel by ID
+//-get delivery personnel
 app.get(API_PREFIX + 'get', async (req, res) => {
     try {
         const { DeliveryPersonnelID } = req.query;
         const result = await sql.query`
-            EXEC GetDeliveryPersonnel
+            EXEC GET_DELIVERY_PERSONNEL
             @DeliveryPersonnelID = ${DeliveryPersonnelID};`;
         res.status(200).json(result.recordset[0]);
     } catch (err) {
@@ -114,12 +133,12 @@ app.get(API_PREFIX + 'get', async (req, res) => {
     }
 });
 
-//-get availability by ID
+//-get availability
 app.get(API_PREFIX + 'availability', async (req, res) => {
     try {
         const { DeliveryPersonnelID } = req.query;
         const result = await sql.query`
-            EXEC GetAvailabilityStatus
+            EXEC GET_AVAILABILITY_STATUS
             @DeliveryPersonnelID = ${DeliveryPersonnelID};`;
         res.status(200).json({ availabilityStatus: result.recordset[0].AvailabilityStatus });
     } catch (err) {
@@ -135,7 +154,7 @@ app.get(API_PREFIX + 'order', async (req, res) => {
     try {
         const { OrderID } = req.query;  // Fetch OrderID from query params
         const result = await sql.query`
-            EXEC GetDeliveryOrdersByOrderId
+            EXEC GETDELIVERYORDERSBYORDERID
             @OrderID = ${OrderID};`;
         res.status(200).json(result.recordset);
     } catch (err) {
@@ -149,7 +168,7 @@ app.get(API_PREFIX + 'personnel-orders', async (req, res) => {
     try {
         const { DeliveryPersonnelID } = req.query;  // Fetch DeliveryPersonnelID from query params
         const result = await sql.query`
-            EXEC GetDeliveryOrdersByDeliveryPersonnelid
+            EXEC GETDELIVERYORDERSBYDELIVERYPERSONNELID
             @DeliveryPersonnelID = ${DeliveryPersonnelID};`;
         res.status(200).json(result.recordset);
     } catch (err) {
@@ -161,28 +180,14 @@ app.get(API_PREFIX + 'personnel-orders', async (req, res) => {
 //-Update Delivery Order Status
 app.put(API_PREFIX + 'order-status', async (req, res) => {
     try {
-        const { OrderID, Status } = req.body;  // Fetch OrderID and Status from request body
+        const { OrderID, OrderStatus } = req.body;  // Fetch OrderID and Status from request body
         const result = await sql.query`
-            EXEC UpdateDeliveryOrderStatus
+            EXEC UPDATEDELIVERYORDERSTATUS
             @OrderID = ${OrderID},
-            @Status = ${Status};`;
+            @OrderStatus = ${OrderStatus};`;
         res.status(200).json({ message: 'Order status updated successfully' });
     } catch (err) {
         console.error('Error executing UpdateDeliveryOrderStatus:', err);
-        res.status(500).json({ message: 'Server error' });
-    }
-});
-
-//-Get Delivery Order Status
-app.get(API_PREFIX + 'order-status', async (req, res) => {
-    try {
-        const { OrderID } = req.query;  // Fetch OrderID from query params
-        const result = await sql.query`
-            EXEC GetDeliveryOrderStatus
-            @OrderID = ${OrderID};`;
-        res.status(200).json({ orderStatus: result.recordset[0].OrderStatus });
-    } catch (err) {
-        console.error('Error executing GetDeliveryOrderStatus:', err);
         res.status(500).json({ message: 'Server error' });
     }
 });
