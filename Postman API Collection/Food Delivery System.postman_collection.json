@@ -125,7 +125,8 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "**The Restaurant Menu Operations are listed below:**\n\n1. Get Menu by Restaurant ID\n    \n2. Get All Restaurant's Menu\n    \n3. Add Food Item By Restaurant ID\n    \n4. Delete Food ID by Food ID & Restaurant ID\n    \n5. Update Food Item by Food ID & Restaurant ID"
 				},
 				{
 					"name": "Restaurant Order",
@@ -185,7 +186,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"orderid\": 1,\r\n    \"totalamount\": null,\r\n    \"deliveryaddress\": null,\r\n    \"deliveryfee\": 63.00,\r\n    \"paymentmethod\": null,\r\n    \"orderstatus\": \"Order Cancelled\",\r\n    \"notes\": null\r\n}",
+									"raw": "{\r\n    \"orderid\": 4,\r\n    \"totalamount\": null,\r\n    \"deliveryaddress\": null,\r\n    \"deliveryfee\": 63.00,\r\n    \"paymentmethod\": null,\r\n    \"orderstatus\": \"Order Cancelled\",\r\n    \"notes\": null\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -234,7 +235,8 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "**The Restaurant Order Operations are listed below:**\n\n1. Get Orders by Restaurant ID\n    \n2. Get Order Details by Order ID\n    \n3. Update Order by Order ID\n    \n4. Get Order Details by Restaurant ID and Zone ID"
 				},
 				{
 					"name": "Restaurant Profile",
@@ -328,7 +330,8 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "**The Restaurant Profile Operations are listed below:**\n\n1. Get Restaurant Profile\n    \n2. Delete Restaurant Profile by Restaurant ID\n    \n3. Update Restaurant Profile\n    \n4. Create a Restaurant Profile"
 				},
 				{
 					"name": "Restaurant Zone",
@@ -444,7 +447,8 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "**The Restaurant Zone Operations are listed below:**\n\n1. Get Restaurant Zone Detail by Zone ID & Restaurant ID\n    \n2. Add Restaurant Zone Detail by Restaurant ID\n    \n3. Update Zone Detail by Zone ID & Restaurant ID\n    \n4. Delete a Zone Detail by Zone ID and Restaurant ID"
 				},
 				{
 					"name": "Restaurant Manager",
@@ -556,15 +560,17 @@
 							},
 							"response": []
 						}
-					]
+					],
+					"description": "**The Restaurant Manager Operations are listed below:**\n\n1. Create a Restaurant Manager Detail\n    \n2. Delete a Restaurant Manager Detail\n    \n3. Update a Restaurant Manager Detail\n    \n4. Login a Restaurant Manager"
 				}
 			],
+			"description": "**The Restaurant Owner Functionalities are lites below:**\n\n1. Manage the Menu Details\n    \n2. Manage the Order Details\n    \n3. Manage the delivery zones Details\n    \n4. Manage Restaurant Profile Details\n    \n5. Manage Restaurant Manager Details",
 			"auth": {
 				"type": "bearer",
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJoYXJhdGgxNTkiLCJpYXQiOjE3MzA3NzQ4NzB9.PErlYwxmPl1rcFP4Mm0ZqwSzXXrZylKcxXZD4NJMcQo",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJoYXJhdGgxNTkiLCJpYXQiOjE3MzE1Nzk2Mzl9.1WZRshV-j2eMAEmdRUTlxnGbT0ZwdEaAd1Z34tCTKfI",
 						"type": "string"
 					}
 				]
