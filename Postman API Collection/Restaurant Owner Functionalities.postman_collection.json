@@ -54,7 +54,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"restaurantid\": 3,\r\n    \"foodname\": \"OREO ICE CREAM(500 ML)\",\r\n    \"price\": 160.00,\r\n    \"type\": \"ICE CREAM\"\r\n}",
+									"raw": "{\r\n    \"restaurantid\": 3,\r\n    \"foodname\": \"SPECIAL ICE CREAM(500 ML)\",\r\n    \"price\": 160.00,\r\n    \"type\": \"ICE CREAM\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -106,7 +106,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"restaurantid\": 3,\r\n    \"foodid\": 934,\r\n    \"foodname\": null,\r\n    \"price\": null,\r\n    \"type\": null,\r\n    \"availability\": \"UNAVAILABLE\"\r\n}",
+									"raw": "{\r\n    \"restaurantid\": 3,\r\n    \"foodid\": 933,\r\n    \"foodname\": null,\r\n    \"price\": null,\r\n    \"type\": null,\r\n    \"availability\": \"AVAILABLE\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -186,7 +186,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"orderid\": 4,\r\n    \"totalamount\": null,\r\n    \"deliveryaddress\": null,\r\n    \"deliveryfee\": 63.00,\r\n    \"paymentmethod\": null,\r\n    \"orderstatus\": \"Order Cancelled\",\r\n    \"notes\": null\r\n}",
+									"raw": "{\r\n    \"orderid\": 4,\r\n    \"totalamount\": null,\r\n    \"deliveryaddress\": null,\r\n    \"deliveryfee\": 64.00,\r\n    \"paymentmethod\": null,\r\n    \"orderstatus\": \"Order Cancelled\",\r\n    \"notes\": null\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -265,13 +265,13 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/delete-restaurant-profile-by-restaurant-id/4",
+									"raw": "{{baseUrl}}/delete-restaurant-profile-by-restaurant-id/6",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"delete-restaurant-profile-by-restaurant-id",
-										"4"
+										"6"
 									]
 								}
 							},
@@ -284,7 +284,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"restaurantname\": null,\r\n    \"mainphone\": 7891324565\r\n}",
+									"raw": "{\r\n    \"restaurantname\": null,\r\n    \"mainphone\": 7891324500\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -311,7 +311,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"restaurantname\":\"Taste Junction\",\r\n    \"mainphone\":938271456\r\n}",
+									"raw": "{\r\n    \"restaurantname\":\"Super Taste Junction\",\r\n    \"mainphone\":938271456\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -381,13 +381,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/add-a-zone-detail/3",
+									"raw": "{{baseUrl}}/add-a-zone-detail/4",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"add-a-zone-detail",
-										"3"
+										"4"
 									]
 								}
 							},
@@ -408,13 +408,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/update-a-zone-detail/3",
+									"raw": "{{baseUrl}}/update-a-zone-detail/4",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"update-a-zone-detail",
-										"3"
+										"4"
 									]
 								}
 							},
@@ -435,13 +435,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/delete-a-zone-detail/3",
+									"raw": "{{baseUrl}}/delete-a-zone-detail/4",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"delete-a-zone-detail",
-										"3"
+										"4"
 									]
 								}
 							},
@@ -460,7 +460,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"restaurantid\":2,\r\n    \"username\":\"Ajay456\",\r\n    \"password\":\"User2Spice\"\r\n}",
+									"raw": "{\r\n    \"restaurantid\":3,\r\n    \"username\":\"Ajay456\",\r\n    \"password\":\"User2Spice\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -486,7 +486,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"userid\":10,\r\n    \"restaurantid\":2,\r\n    \"username\":\"Ajay456\",\r\n    \"password\":\"User2Spice\"\r\n}",
+									"raw": "{\r\n    \"userid\":3,\r\n    \"restaurantid\":3,\r\n    \"username\":\"Ajay456\",\r\n    \"password\":\"User2Spice\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -512,7 +512,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"userid\":1,\r\n    \"restaurantid\":1,\r\n    \"password\":\"User1Hungry\"\r\n}",
+									"raw": "{\r\n    \"userid\":4,\r\n    \"restaurantid\":3,\r\n    \"password\":\"User2Spice2\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -570,7 +570,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJoYXJhdGgxNTkiLCJpYXQiOjE3MzE1Nzk2Mzl9.1WZRshV-j2eMAEmdRUTlxnGbT0ZwdEaAd1Z34tCTKfI",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkJoYXJhdGgxNTkiLCJpYXQiOjE3MzE3MDAxMDR9.95d3zI64UUT_1RSodZpSPyIiAtbQAI11XHwz1Xxa1lo",
 						"type": "string"
 					}
 				]
@@ -624,7 +624,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:5000/restaurant",
+			"value": "https://localhost:5000/restaurant",
 			"type": "string"
 		}
 	]
