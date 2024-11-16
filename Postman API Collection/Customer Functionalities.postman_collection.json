@@ -3,7 +3,7 @@
 		"_postman_id": "b63c9dc9-e2e8-41d4-b14b-70316ddb71cc",
 		"name": "Customer Functionalities",
 		"description": "This involves all the api created for customer interaction",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "27942383"
 	},
 	"item": [
@@ -23,24 +23,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Sriram\",\r\n    \"address\": \"Sriram\",\r\n    \"phone\": \"9412427490\",\r\n    \"email\": \"sriram2@gmail.com\",\r\n    \"pincode\": \"560012\",\r\n    \"cardNumber\": \"1264-0946-4379-9034\",\r\n    \"password\": \"qwerty\",\r\n    \"username\": \"sriram\"\r\n}",
+									"raw": "{\r\n    \"name\": \"sriram\",\r\n    \"address\": \"23,4th Avenue, Indranagar, Bangalore\",\r\n    \"phone\": \"9412427234\",\r\n    \"email\": \"sriram@gmail.com\",\r\n    \"pincode\": \"560011\",\r\n    \"cardNumber\": \"1311-0796-3344-9334\",\r\n    \"password\": \"qwerty\",\r\n    \"username\": \"sriram\" \r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": {
-									"raw": "localhost:8080/customer/register",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"customer",
-										"register"
-									]
-								}
+								"url": "{{baseurl}}/customer/register"
 							},
 							"response": []
 						},
@@ -51,24 +41,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\":\"sriram\",\r\n    \"password\":\"qwerty\"\r\n}",
+									"raw": "{\r\n    \r\n    \"username\":\"vikram\",\r\n    \"password\":\"vikrampass\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": {
-									"raw": "localhost:8080/customer/login",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"customer",
-										"login"
-									]
-								}
+								"url": "{{baseurl}}/customer/login"
 							},
 							"response": []
 						}
@@ -79,330 +59,184 @@
 					"name": "customer settings",
 					"item": [
 						{
-							"name": "update customer details",
+							"name": "Get all customer",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmlyYW0iLCJpYXQiOjE3MzE3NTY4NTYsImV4cCI6MTczMTgwMDA1Nn0.b5z5Ft3SAPsQYL78yAU7p4PU-8p0qsXeMmqY-36wYEw",
-											"type": "string"
-										}
-									]
-								},
-								"method": "PUT",
+								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{   \"id\":5,\r\n    \"name\": \"Sriram\",\r\n    \"address\": \"Sriram\",\r\n    \"phone\": \"9412427490\",\r\n    \"email\": \"sriram2@gmail.com\",\r\n    \"pincode\": \"560078\",\r\n    \"cardNumber\": \"1264-0946-4379-9034\",\r\n    \"password\": \"qwerty\",\r\n    \"username\": \"sriram\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "localhost:8080/customer/1",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"customer",
-										"1"
-									]
-								}
+								"url": "{{baseurl}}/customer/"
 							},
 							"response": []
 						},
 						{
 							"name": "Get customer detail by id",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmlyYW0iLCJpYXQiOjE3MzE3NTY4NTYsImV4cCI6MTczMTgwMDA1Nn0.b5z5Ft3SAPsQYL78yAU7p4PU-8p0qsXeMmqY-36wYEw",
-											"type": "string"
-										}
-									]
-								},
 								"method": "GET",
 								"header": [],
-								"url": {
-									"raw": "localhost:8080/customer/2",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"customer",
-										"2"
-									]
-								}
+								"url": "{{baseurl}}/customer/10"
 							},
 							"response": []
 						},
 						{
-							"name": "Get all customer",
+							"name": "update customer details",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmlyYW0iLCJpYXQiOjE3MzE3NTY4NTYsImV4cCI6MTczMTgwMDA1Nn0.b5z5Ft3SAPsQYL78yAU7p4PU-8p0qsXeMmqY-36wYEw",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
+								"method": "PUT",
 								"header": [],
-								"url": {
-									"raw": "localhost:8080/customer/",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"customer",
-										""
-									]
-								}
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n    \"name\": \"Shubham Verma\",\r\n    \"address\": \"56, Nehru Nagar, Delhi\",\r\n    \"phone\": \"9876543212\",\r\n    \"email\": \"shubham.verma@gmail.com\",\r\n    \"pincode\": \"110001\",\r\n    \"cardNumber\": \"8765-1234-4321-9876\",\r\n    \"password\": \"shubham123\",\r\n    \"username\": \"shubham\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/customer/5"
 							},
 							"response": []
 						},
 						{
 							"name": "De-register customer",
 							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmlyYW0iLCJpYXQiOjE3MzE3NTY4NTYsImV4cCI6MTczMTgwMDA1Nn0.b5z5Ft3SAPsQYL78yAU7p4PU-8p0qsXeMmqY-36wYEw",
-											"type": "string"
-										}
-									]
-								},
 								"method": "DELETE",
 								"header": [],
-								"url": {
-									"raw": "localhost:8080/customer/5",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"customer",
-										"5"
-									]
-								}
+								"url": "{{baseurl}}/customer/16"
 							},
 							"response": []
 						}
 					],
-					"description": "This api enable to view, change, modify and remove customer"
+					"description": "This api enable to view, change, modify and remove customer",
+					"auth": {
+						"type": "bearer",
+						"bearer": {
+							"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmlyYW0iLCJpYXQiOjE3MzE3OTAzNTIsImV4cCI6MTczMTgzMzU1Mn0.7GGUIfX-3GBil9_LFPj4iMwDg89s4Fl1NCcnQDCa3KM"
+						}
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
 				}
 			],
-			"description": "Contains all the api related to customer funcionalities like registration,login,update details,etc."
+			"description": "Contains all the api related to customer funcionalities like registration,login,update details,etc.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		},
 		{
 			"name": "Restaurant Interactions",
 			"item": [
 				{
-					"name": "Order history by customer id",
+					"name": "view all restaurants",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZW4iLCJpYXQiOjE3MzE3NTYyNTQsImV4cCI6MTczMTc5OTQ1NH0.4iycFt1abHrqkz9GOb4UVqVGyE2iQo_QVF3HW5Otjr0",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/customer/order-history/2",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"order-history",
-								"2"
-							]
-						}
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": "{{baseurl}}/customer/view-all-restaurant"
 					},
 					"response": []
 				},
 				{
 					"name": "Filter Restaurant and menu",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZW4iLCJpYXQiOjE3MzE3NTQzOTMsImV4cCI6MTczMTc5NzU5M30.07KLfPWSGlBZI-A4DLrBHtMSF2ZkURu3arAg5ohahfo",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"RestaurantID\":3,\r\n    \"Availability\": \"AVAILABLE\",\r\n    \"PRICE\":30\r\n  \r\n    \r\n}",
+							"raw": "{\r\n    \"RestaurantID\":3\r\n    // \"Availability\": \"AVAILABLE\",\r\n    // \"PRICE\":100\r\n  \r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:8080/customer/filter-restaurant",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"filter-restaurant"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Track order by id",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZW4iLCJpYXQiOjE3MzE3NTYyNTQsImV4cCI6MTczMTc5OTQ1NH0.4iycFt1abHrqkz9GOb4UVqVGyE2iQo_QVF3HW5Otjr0",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/customer/status/3",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"status",
-								"3"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "view all restaurants",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZW4iLCJpYXQiOjE3MzE3NTE5OTYsImV4cCI6MTczMTc1MjQyOH0.4ZM0MPkgZZMoavZ9LZHmHFu9TC6ZgnB8xK7ta8jDDWg",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8080/customer/view-all-restaurant",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"view-all-restaurant"
-							]
-						}
+						"url": "{{baseurl}}/customer/filter-restaurant"
 					},
 					"response": []
 				},
 				{
 					"name": "Place an restaurant order",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZW4iLCJpYXQiOjE3MzE3NTYwMTAsImV4cCI6MTczMTc5OTIxMH0.tZ4usbOodaF9DrL-ezeNTNN23S709bGm934vqkiv8jA",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\r\n\"customerId\":2,\r\n\"restaurantId\":2,\r\n\"zoneId\":103,\r\n\"orderDate\":\"2024-11-14T18:16:42.157\",\r\n\"customerName\":\"John\",\r\n\"totalAmount\":238.48,\r\n\"deliveryAddress\":\"Chennai\",\r\n\"deliveryFee\":40.32,\r\n\"paymentMethod\":\"Cash\",\r\n\"orderStatus\":\"Preparing\",\r\n\"notes\":\"dont ring bell\",\r\n\"created\":\"2024-11-14T18:16:42.157\",\r\n\"lastUpdated\":\"2024-11-14T18:16:42.157\"\r\n}",
+							"raw": "{\r\n\r\n\"customerId\":5,\r\n\"restaurantId\":3,\r\n\"zoneId\":103,\r\n\"orderDate\":\"2024-11-14T18:16:42.157\",\r\n\"customerName\":\"\",\r\n\"totalAmount\":238.48,\r\n\"deliveryAddress\":\"Bangalore\",\r\n\"deliveryFee\":40.32,\r\n\"paymentMethod\":\"Cash\",\r\n\"orderStatus\":\"pending\",\r\n\"notes\":\"dont ring bell\",\r\n\"created\":\"2024-11-14T18:16:42.157\",\r\n\"lastUpdated\":\"2024-11-14T18:16:42.157\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:8080/customer/create-restaurant-order",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"create-restaurant-order"
-							]
-						}
+						"url": "{{baseurl}}/customer/create-restaurant-order"
+					},
+					"response": []
+				},
+				{
+					"name": "Track order by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/customer/status/4"
 					},
 					"response": []
 				},
 				{
 					"name": "Get all restaurant orders",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrZW4iLCJpYXQiOjE3MzE3NTYyNTQsImV4cCI6MTczMTc5OTQ1NH0.4iycFt1abHrqkz9GOb4UVqVGyE2iQo_QVF3HW5Otjr0",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/customer/orders",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"orders"
-							]
-						}
+						"url": "{{baseurl}}/customer/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "Order history by customer id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/customer/order-history/3074"
 					},
 					"response": []
 				},
@@ -411,22 +245,71 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "localhost:8080/customer/order/1",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"order",
-								"1"
-							]
-						}
+						"url": "{{baseurl}}/customer/order/20"
 					},
 					"response": []
 				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmlyYW0iLCJpYXQiOjE3MzE3OTAzNTIsImV4cCI6MTczMTgzMzU1Mn0.7GGUIfX-3GBil9_LFPj4iMwDg89s4Fl1NCcnQDCa3KM"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
 			]
+		}
+	],
+	"auth": {
+		"type": "inherit",
+		"inherit": {}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "ec2-13-233-162-151.ap-south-1.compute.amazonaws.com:8080"
 		}
 	]
 }
