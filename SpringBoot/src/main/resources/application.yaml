@@ -1,0 +1,13 @@
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://fooddeliveryapigroup37.database.windows.net:1433;databaseName=FOOD_DELIVERY;encrypt=false;trustServerCertificate=true
+    username: hanuman
+    password: Raghavan@Santhi14
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming-strategy: com.sriram_api_assignment.Restaurent_Api_Group_Assignment.CustomPhysicalNamingStrategy
+    show-sql: true
