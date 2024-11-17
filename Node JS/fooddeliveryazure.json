@@ -1,11 +1,10 @@
 {
-    "user": "LAPTOP-MRBAG6FG\\shaty",
-    "database": "food_delivery",
-    "server": "LAPTOP-MRBAG6FG",
-    "options": {
-    "trustedConnection": true,
-    "trustServerCertificate": true
-  },
-    "connectionTimeout": 30000, 
-    "requestTimeout": 30000 
+  "user": "****",
+  "password": "****",
+  "database": "*****",
+  "server": "******",
+  "port": 1234,
+  "options": {
+      "encrypt": true
+  }
 }
