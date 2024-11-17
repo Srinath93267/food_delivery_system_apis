@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "b63c9dc9-e2e8-41d4-b14b-70316ddb71cc",
+		"name": "Customer Functionalities",
+		"description": "This involves all the api created for customer interaction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27942383"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Register and login",
+					"item": [
+						{
+							"name": "Register new customer",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"sriram\",\r\n    \"address\": \"23,4th Avenue, Indranagar, Bangalore\",\r\n    \"phone\": \"9412427234\",\r\n    \"email\": \"sriram@gmail.com\",\r\n    \"pincode\": \"560011\",\r\n    \"cardNumber\": \"1311-0796-3344-9334\",\r\n    \"password\": \"qwerty\",\r\n    \"username\": \"sriram\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/customer/register"
+							},
+							"response": []
+						},
+						{
+							"name": "Customer Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"username\":\"vikram\",\r\n    \"password\":\"vikrampass\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/customer/login"
+							},
+							"response": []
+						}
+					],
+					"description": "These api calls will not require JWT tokens."
+				},
+				{
+					"name": "customer settings",
+					"item": [
+						{
+							"name": "Get all customer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseurl}}/customer/"
+							},
+							"response": []
+						},
+						{
+							"name": "Get customer detail by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseurl}}/customer/10"
+							},
+							"response": []
+						},
+						{
+							"name": "update customer details",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n    \"name\": \"Shubham Verma\",\r\n    \"address\": \"56, Nehru Nagar, Delhi\",\r\n    \"phone\": \"9876543212\",\r\n    \"email\": \"shubham.verma@gmail.com\",\r\n    \"pincode\": \"110001\",\r\n    \"cardNumber\": \"8765-1234-4321-9876\",\r\n    \"password\": \"shubham123\",\r\n    \"username\": \"shubham\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseurl}}/customer/5"
+							},
+							"response": []
+						},
+						{
+							"name": "De-register customer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseurl}}/customer/16"
+							},
+							"response": []
+						}
+					],
+					"description": "This api enable to view, change, modify and remove customer",
+					"auth": {
+						"type": "bearer",
+						"bearer": {
+							"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmlyYW0iLCJpYXQiOjE3MzE3OTAzNTIsImV4cCI6MTczMTgzMzU1Mn0.7GGUIfX-3GBil9_LFPj4iMwDg89s4Fl1NCcnQDCa3KM"
+						}
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			],
+			"description": "Contains all the api related to customer funcionalities like registration,login,update details,etc.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Restaurant Interactions",
+			"item": [
+				{
+					"name": "view all restaurants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": "{{baseurl}}/customer/view-all-restaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Restaurant and menu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"RestaurantID\":3\r\n    // \"Availability\": \"AVAILABLE\",\r\n    // \"PRICE\":100\r\n  \r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/customer/filter-restaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "Place an restaurant order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\"customerId\":5,\r\n\"restaurantId\":3,\r\n\"zoneId\":103,\r\n\"orderDate\":\"2024-11-14T18:16:42.157\",\r\n\"customerName\":\"\",\r\n\"totalAmount\":238.48,\r\n\"deliveryAddress\":\"Bangalore\",\r\n\"deliveryFee\":40.32,\r\n\"paymentMethod\":\"Cash\",\r\n\"orderStatus\":\"pending\",\r\n\"notes\":\"dont ring bell\",\r\n\"created\":\"2024-11-14T18:16:42.157\",\r\n\"lastUpdated\":\"2024-11-14T18:16:42.157\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseurl}}/customer/create-restaurant-order"
+					},
+					"response": []
+				},
+				{
+					"name": "Track order by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/customer/status/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all restaurant orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/customer/orders"
+					},
+					"response": []
+				},
+				{
+					"name": "Order history by customer id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseurl}}/customer/order-history/3074"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseurl}}/customer/order/20"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzcmlyYW0iLCJpYXQiOjE3MzE3OTAzNTIsImV4cCI6MTczMTgzMzU1Mn0.7GGUIfX-3GBil9_LFPj4iMwDg89s4Fl1NCcnQDCa3KM"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "inherit",
+		"inherit": {}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "ec2-13-233-162-151.ap-south-1.compute.amazonaws.com:8080"
+		}
+	]
+}
