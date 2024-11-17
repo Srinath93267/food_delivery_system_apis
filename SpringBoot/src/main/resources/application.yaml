@@ -1,9 +1,9 @@
 
 spring:
   datasource:
-    url: jdbc:sqlserver://fooddeliveryapigroup37.database.windows.net:1433;databaseName=FOOD_DELIVERY;encrypt=false;trustServerCertificate=true
-    username: hanuman
-    password: Raghavan@Santhi14
+    url: jdbc:sqlserver://<servername>:<portnumber>;databaseName=<database name>;encrypt=false;trustServerCertificate=true
+    username: <username>
+    password: <password>
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
   jpa:
