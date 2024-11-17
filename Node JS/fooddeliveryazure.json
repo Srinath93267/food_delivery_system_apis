@@ -1,10 +1,11 @@
 {
-    "user": "****",
-    "password": "****",
-    "database": "*****",
-    "server": "******",
-    "port": 1234,
+    "user": "LAPTOP-MRBAG6FG\\shaty",
+    "database": "food_delivery",
+    "server": "LAPTOP-MRBAG6FG",
     "options": {
-        "encrypt": true
-    }
+    "trustedConnection": true,
+    "trustServerCertificate": true
+  },
+    "connectionTimeout": 30000, 
+    "requestTimeout": 30000 
 }
