@@ -1,0 +1,107 @@
+{
+    "info": {
+      "name": "Administrator API - Food Delivery System",
+      "_postman_id": "abcd1234-5678-90ef-ghij-klmnopqrstuv",
+      "description": "Administrator API for managing users, orders, and generating reports in the Food Delivery System.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Create User",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer <token>",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"role\": \"admin\",\n  \"name\": \"Admin User\",\n  \"email\": \"admin@example.com\",\n  \"password\": \"securepassword123\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/admin/users",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "admin", "users"]
+          },
+          "description": "Create a new user with a specified role (e.g., admin, restaurant owner, delivery personnel, customer)."
+        },
+        "response": []
+      },
+      {
+        "name": "Update User",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer <token>",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"Updated Admin User\",\n  \"email\": \"updatedadmin@example.com\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/admin/users/:id",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "admin", "users", ":id"]
+          },
+          "description": "Update an existing user's details by their unique ID."
+        },
+        "response": []
+      },
+      {
+        "name": "Fetch All Orders",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer <token>",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/api/admin/orders",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "admin", "orders"]
+          },
+          "description": "Retrieve all orders placed on the platform, including their statuses and related details."
+        },
+        "response": []
+      },
+      {
+        "name": "Generate Reports",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer <token>",
+              "type": "text"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:3000/api/admin/reports",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "admin", "reports"]
+          },
+          "description": "Generate reports summarizing platform performance, including total users, total orders, and other metrics."
+        },
+        "response": []
+      }
+    ]
+  }
+  
